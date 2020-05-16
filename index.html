@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+    <script>
+        
+        function computerPlay() {
+            let computerChoice = Math.floor(Math.random() * 3);
+
+            if (computerChoice === 0) {
+                return 'rock';
+            } else if (computerChoice === 1) {
+                return 'paper';
+            } else {
+                return 'scissors'
+            };   
+        }
+
+        // let computerSelection = computerPlay();
+        // let userPrompt = prompt(`Type rock, paper, or scissors to play`, '');
+
+        // var regex = new RegExp(/^(rock|paper|scissors)$/i);
+
+        // function validateUserPrompt() {
+        //     if(regex.test(userPrompt)) {
+        //         let playerSelection = userPrompt;
+        //     } else {
+        //         alert('please enter rock, paper, or scissors.');
+        //      }
+        //     }
+
+        // validateUserPrompt();
+
+
+        function playRound(playerSelection, computerSelection) {
+            if (playerSelection.toLowerCase() === computerSelection) {
+                let result = 'Draw! You think just like a computer!!';  
+                return result;
+            } else if (playerSelection.toLowerCase() === 'rock' && computerSelection === 'scissors') {
+                let result = 'You win! Rock beats scissors.'; 
+                return result;  
+            } else if (playerSelection.toLowerCase() === 'rock' && computerSelection === 'paper') {
+                let result = 'You lose! Paper beats rock.';
+                return result;
+            } else if (playerSelection.toLowerCase() === 'paper' && computerSelection === 'rock') {
+                let result = 'You win! Paper beats rock.';
+                return result;
+            } else if (playerSelection.toLowerCase() === 'paper' && computerSelection === 'scissors') {
+                let result = 'You lose! Scissors beats paper.';
+                return result;
+            } else if (playerSelection.toLowerCase() === 'scissors'&& computerSelection === 'paper') {
+                let result = 'You win! Scissors beats paper.';
+                return result;
+            } else {
+                let result = 'You lose! Rock beats scissors.';
+                return result;
+            } 
+        }
+
+
+
+        function game() {
+
+                let userScore = 0;
+                let computerScore = 0;
+                // let playerSelection;
+                
+            for (r = 0; r < 5; r++) {
+                
+                var regex = new RegExp(/^(rock|paper|scissors)$/i);
+                
+                let playerSelection = prompt(`Round ${r + 1}. Type rock, paper, or scissors to play`, '');                      
+
+                //**Can't get this to work at the moment, need to reassign playerSelection when true**
+                // function validate(x) {  **Can't get this to work at the moment, need to reassign playerSelection when true**
+                // while (regex.test(x) === false) {
+                //     x = prompt('Try again. please enter rock, paper, or scissors.', '');
+                //     if (regex.test(x) === true) {
+                //     alert('Computer is making it\'s selection');
+                //     break;
+                //     } 
+                // } 
+                // }
+
+                // validate(playerSelection);
+                
+
+                function computerPlay() {
+                    let computerChoice = Math.floor(Math.random() * 3);
+
+                    if (computerChoice === 0) {
+                      return 'rock';
+                    } else if (computerChoice === 1) {
+                      return 'paper';
+                    } else {
+                    return 'scissors'
+                    };   
+                }
+
+                let computerSelection = computerPlay();
+
+
+                function playRound(p, c) {
+                    if (p.toLowerCase() === c) {
+                    alert('Draw! You think just like a computer!!');  
+                }   else if (p.toLowerCase() === 'rock' && c === 'scissors') {
+                    alert('You win! Rock beats scissors.'); 
+                    userScore++;
+                }   else if (p.toLowerCase() === 'rock' && c === 'paper') {
+                    alert('You lose! Paper beats rock.');
+                    computerScore++;
+                }   else if (p.toLowerCase() === 'paper' && c === 'rock') {
+                    alert('You win! Paper beats rock.');
+                    userScore++;
+                }   else if (p.toLowerCase() === 'paper' && c === 'scissors') {
+                    alert('You lose! Scissors beats paper.');
+                    computerScore++;
+                }   else if (p.toLowerCase() === 'scissors'&& c === 'paper') {
+                    alert('You win! Scissors beats paper.');
+                    userScore++;
+                }   else {
+                    alert('You lose! Rock beats scissors.');
+                    computerScore++;
+                } 
+                }  
+
+                playRound(playerSelection, computerSelection);
+                let totalRounds = r + 1;
+                let finalScore = 'After round ' + totalRounds + ', your score is ' + userScore + ' and the computer\'s score is ' + computerScore + '.'; 
+                console.log(finalScore);
+            }  
+            if (userScore > computerScore) {
+                alert('You are the champion!');
+            } else if (computerScore > userScore) {
+                alert('You lost, the robots are taking over!!!');
+            } else {
+                alert('You are as smart as Bender');
+            }
+        }
+    </script>
+</body>
+</html>
