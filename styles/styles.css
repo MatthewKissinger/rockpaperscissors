@@ -1,0 +1,45 @@
+h2 {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.button-container {
+    /* border: 1px solid black; */
+    width: 700px;
+    margin: auto;
+    margin-top: 100px;
+
+}
+
+button {
+    height: 100px;
+    width: 100px;
+    margin-left: 100px;
+}
+
+.fa-hand-rock {
+    color: blue;
+}
+
+.fa-hand-paper {
+    color: green;
+}
+
+.fa-hand-scissors {
+    color: red;
+}
+
+#results {
+    /* border: 1px solid green; */
+    width: 500px;
+    margin: auto;
+}
+
+.totals {
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
+    margin-top: 60px;
+    margin-left: 100px;
+}
